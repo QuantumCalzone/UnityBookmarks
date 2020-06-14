@@ -9,7 +9,5 @@
 		"type": "git",
 		"url": "git+https://github.com/QuantumCalzone/UnityBookmarks.git"
 	},
-	"author": "QuantumCalzone <QuantumCalzone@gmail.com> (https://github.com/QuantumCalzone)",
-	"dependencies": {
-	}
+	"author": "QuantumCalzone <QuantumCalzone@gmail.com> (https://github.com/QuantumCalzone)"
 }
