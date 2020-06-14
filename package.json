@@ -1,0 +1,15 @@
+{
+	"name": "com.QuantumCalzone.UnityBookmarks",
+	"displayName": "UnityBookmarks",
+	"description": "UnityBookmarks",
+	"version": "0.1.0",
+	"unity": "2018.4",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/QuantumCalzone/UnityBookmarks.git"
+	},
+	"author": "QuantumCalzone <QuantumCalzone@gmail.com> (https://github.com/QuantumCalzone)",
+	"dependencies": {
+	}
+}
