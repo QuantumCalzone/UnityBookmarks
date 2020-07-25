@@ -19,14 +19,7 @@ namespace QuantumCalzone
                 {
                     if (AssetDatabase.IsMainAsset(Selection.activeObject))
                     {
-                        if (!IsScene(Selection.activeObject))
-                        {
-                            selection = AssetDatabase.GetAssetPath(Selection.activeObject);
-                        }
-                        else
-                        {
-                            selection = Selection.activeObject.name;
-                        }
+                        selection = AssetDatabase.GetAssetPath(Selection.activeObject);
                     }
                 }
 

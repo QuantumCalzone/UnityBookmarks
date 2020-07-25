@@ -36,6 +36,7 @@ namespace QuantumCalzone
             else
             {
                 GUILayout.Label("Assets");
+
                 if(bookmarks.AssetPaths.Length == 0)
                 {
                     Utilities.DrawLabelCenteredBold("None");
@@ -45,13 +46,16 @@ namespace QuantumCalzone
                     for(var i = 0; i < bookmarks.AssetPaths.Length; i++)
                     {
                         var assetPath = bookmarks.AssetPaths[i];
+
                         if(!string.IsNullOrEmpty(assetPath.Replace(" ", string.Empty)))
                         {
                             var selectAssetLabel = Path.GetFileNameWithoutExtension(assetPath);
                             selectAssetLabel = Utilities.AddSpacesToSentence(selectAssetLabel, false);
+
                             if(GUILayout.Button(selectAssetLabel))
                             {
                                 var asset = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(assetPath);
+
                                 if(!asset)
                                 {
                                     EditorDialogModal.Display(
@@ -64,12 +68,12 @@ namespace QuantumCalzone
                                             Utilities.Bookmarks.Unbookmark(assetPath, false);
                                         })
                                     );
-
-                                    return;
                                 }
-
-                                Selection.activeObject = asset;
-                                EditorGUIUtility.PingObject(Selection.activeObject);
+                                else
+                                {
+                                    Selection.activeObject = asset;
+                                    EditorGUIUtility.PingObject(Selection.activeObject);
+                                }
                             }
                         }
                     }
@@ -84,30 +88,36 @@ namespace QuantumCalzone
                 {
                     for(var i = 0; i < bookmarks.Scenes.Length; i++)
                     {
-                        var sceneName = bookmarks.Scenes[i];
-                        if(!string.IsNullOrEmpty(sceneName.Replace(" ", string.Empty)))
+                        var scenePath = bookmarks.Scenes[i];
+                        var sceneName = Path.GetFileName(scenePath);
+
+                        if (!string.IsNullOrEmpty(sceneName.Replace(" ", string.Empty)))
                         {
                             var openSceneLabel = Utilities.AddSpacesToSentence(sceneName, false);
-                            if(GUILayout.Button(openSceneLabel))
+                            openSceneLabel = openSceneLabel.Replace(".unity", string.Empty);
+
+                            if (GUILayout.Button(openSceneLabel))
                             {
-                                sceneName = string.Format("{0}{1}.unity", sceneDirectory, sceneName);
-                                if(UnityEditor.SceneManagement.EditorSceneManager.GetSceneByName(sceneName) == null)
+                                var asset = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(scenePath);
+
+                                if (!asset)
                                 {
                                     EditorDialogModal.Display(
                                         "Invalid",
-                                        string.Format("Could not find scene {0}\nWould you like to unbookmark it?", sceneName),
+                                        string.Format("Could not find scene {0}\nWould you like to unbookmark it?", scenePath),
                                         new DialogButton("No", null),
                                         "Cancel",
                                         new DialogButton("Yes", () =>
                                         {
-                                            Utilities.Bookmarks.Unbookmark(sceneName, true);
+                                            Utilities.Bookmarks.Unbookmark(scenePath, true);
                                         })
                                     );
-
-                                    return;
                                 }
-                                UnityEditor.SceneManagement.EditorSceneManager.OpenScene(
-                                    sceneName, UnityEditor.SceneManagement.OpenSceneMode.Single);
+                                else
+                                {
+                                    UnityEditor.SceneManagement.EditorSceneManager.OpenScene(
+                                        scenePath, UnityEditor.SceneManagement.OpenSceneMode.Single);
+                                }
                             }
                         }
                     }
