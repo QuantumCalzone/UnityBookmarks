@@ -1,25 +1,25 @@
 {
-  "name": "com.quantumcalzone.unitybookmarks",
-  "displayName": "UnityBookmarks",
-  "description": "A handy bookmark system for Unity.",
-  "version": "1.0.1",
-  "unity": "2018.1",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/QuantumCalzone/UnityBookmarks.git"
-  },
-  "author": {
-    "name": "QuantumCalzone",
-    "email": "QuantumCalzone@gmail.com",
-    "url": "https://github.com/QuantumCalzone"
-  },
-  "type": "tool",
-  "keywords": [
-    "unity",
-    "bookmark",
-    "quantum",
-    "calzone"
-  ],
-  "category": "QuantumCalzone"
+    "name": "com.quantumcalzone.unitybookmarks",
+    "displayName": "UnityBookmarks",
+    "description": "A handy bookmark system for Unity.",
+    "version": "1.0.2",
+    "unity": "2018.1",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/QuantumCalzone/UnityBookmarks.git"
+    },
+    "author": {
+        "name": "QuantumCalzone",
+        "email": "QuantumCalzone@gmail.com",
+        "url": "https://github.com/QuantumCalzone"
+    },
+    "type": "tool",
+    "keywords": [
+        "unity",
+        "bookmark",
+        "quantum",
+        "calzone"
+    ],
+    "category": "QuantumCalzone"
 }
