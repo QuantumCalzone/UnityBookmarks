@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 
 namespace QuantumCalzone
 {
@@ -67,3 +68,4 @@ namespace QuantumCalzone
         }
     }
 }
+#endif
