@@ -40,7 +40,7 @@ namespace QuantumCalzone
 
                 if(bookmarks.AssetPaths.Length == 0)
                 {
-                    Utilities.DrawLabelCenteredBold("None");
+                    EditorUtilities.DrawLabelCenteredBold("None");
                 }
                 else
                 {
@@ -51,7 +51,7 @@ namespace QuantumCalzone
                         if(!string.IsNullOrEmpty(assetPath.Replace(" ", string.Empty)))
                         {
                             var selectAssetLabel = Path.GetFileNameWithoutExtension(assetPath);
-                            selectAssetLabel = Utilities.AddSpacesToSentence(selectAssetLabel, false);
+                            selectAssetLabel = StringUtilities.AddSpacesToSentence(selectAssetLabel, false);
 
                             if(GUILayout.Button(selectAssetLabel))
                             {
@@ -83,7 +83,7 @@ namespace QuantumCalzone
                 GUILayout.Label("Scenes");
                 if(bookmarks.Scenes.Length == 0)
                 {
-                    Utilities.DrawLabelCenteredBold("None");
+                    EditorUtilities.DrawLabelCenteredBold("None");
                 }
                 else
                 {
@@ -94,7 +94,7 @@ namespace QuantumCalzone
 
                         if (!string.IsNullOrEmpty(sceneName.Replace(" ", string.Empty)))
                         {
-                            var openSceneLabel = Utilities.AddSpacesToSentence(sceneName, false);
+                            var openSceneLabel = StringUtilities.AddSpacesToSentence(sceneName, false);
                             openSceneLabel = openSceneLabel.Replace(".unity", string.Empty);
 
                             if (GUILayout.Button(openSceneLabel))

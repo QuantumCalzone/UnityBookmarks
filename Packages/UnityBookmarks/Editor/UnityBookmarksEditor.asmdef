@@ -1,6 +1,10 @@
 {
     "name": "UnityBookmarksEditor",
-    "references": [],
+    "rootNamespace": "",
+    "references": [
+        "GUID:d5de469a460154cc8b6c04c3027487c4",
+        "GUID:ce854aa6970f74d94b3a4eec244764fc"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

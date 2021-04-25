@@ -6,6 +6,13 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.quantumcalzone.unityutilitiesandextensions": {
+      "version": "https://github.com/QuantumCalzone/UnityUtilitiesAndExtensions.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "79f8d11a228c4f13860195803c2eb21fa6527333"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 2,
@@ -20,6 +27,13 @@
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
       },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ide.vscode": {
+      "version": "1.2.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.sysroot": {
