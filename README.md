@@ -1,5 +1,8 @@
-# UnityBookmarks
+# Unity Bookmarks
 A handy bookmark system for Unity.
+
+# Dependencies
+- [Unity Utilities And Extensions](https://github.com/QuantumCalzone/UnityUtilitiesAndExtensions)
 
 ## How to install
 ### Via 2019.4 and later
