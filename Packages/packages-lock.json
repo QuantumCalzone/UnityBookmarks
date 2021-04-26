@@ -6,12 +6,19 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.quantumcalzone.unitygitpackageupdater": {
+      "version": "https://github.com/QuantumCalzone/UnityGitPackageUpdater.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f857f5782ff99f4ecad0375e1efbf234ce058831"
+    },
     "com.quantumcalzone.unityutilitiesandextensions": {
       "version": "https://github.com/QuantumCalzone/UnityUtilitiesAndExtensions.git#upm",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "79f8d11a228c4f13860195803c2eb21fa6527333"
+      "hash": "a284d6f1d68e47ea52feb126caf6fc6fa61a2368"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
