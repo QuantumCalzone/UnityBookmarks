@@ -4,6 +4,9 @@ A handy bookmark system for Unity.
 # Dependencies
 - [Unity Utilities And Extensions](https://github.com/QuantumCalzone/UnityUtilitiesAndExtensions)
 
+# Recommended
+- [Unity Git Package Updater](https://github.com/QuantumCalzone/UnityGitPackageUpdater) (quickly keep dependencies up to date)
+
 ## How to install
 ### Via 2019.4 and later
 - In Unity, open Window/Package Manager
