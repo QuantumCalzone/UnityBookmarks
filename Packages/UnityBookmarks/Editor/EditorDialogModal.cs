@@ -3,7 +3,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace QuantumCalzone
+namespace UnityBookmarks
 {
     public class DialogButton
     {

@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace QuantumCalzone
+namespace UnityBookmarks
 {
     [CreateAssetMenu(fileName = "Bookmarks", menuName = "Scriptable Objects/Bookmarks", order = int.MaxValue)]
     public class Bookmarks : ScriptableObject

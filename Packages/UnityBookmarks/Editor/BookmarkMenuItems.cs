@@ -1,7 +1,7 @@
 ﻿#if UNITY_EDITOR
 using UnityEditor;
 
-namespace QuantumCalzone
+namespace UnityBookmarks
 {
     public static class BookmarkMenuItems
     {

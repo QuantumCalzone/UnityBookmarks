@@ -2,8 +2,9 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using UnityUtilitiesAndExtensions;
 
-namespace QuantumCalzone
+namespace UnityBookmarks
 {
     public class BookmarkEditorWindow : EditorWindow
     {

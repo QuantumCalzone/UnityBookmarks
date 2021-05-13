@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace QuantumCalzone
+namespace UnityBookmarks
 {
     [CustomEditor(typeof(Bookmarks))]
     public class BookmarksEditor : Editor

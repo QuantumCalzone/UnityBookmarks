@@ -1,10 +1,9 @@
 ﻿#if UNITY_EDITOR
-using System.IO;
-using System.Text;
 using UnityEditor;
 using UnityEngine;
+using UnityUtilitiesAndExtensions;
 
-namespace QuantumCalzone
+namespace UnityBookmarks
 {
     public static class Utilities
     {
