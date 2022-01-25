@@ -1,7 +1,7 @@
 ﻿#if UNITY_EDITOR
+using System.Text;
 using UnityEditor;
 using UnityEngine;
-using UnityUtilitiesAndExtensions;
 
 namespace UnityBookmarks
 {
@@ -9,7 +9,7 @@ namespace UnityBookmarks
     {
         public static Bookmarks Bookmarks {
             get {
-                var bookmarks = EditorUtilities.GetAllInstances<Bookmarks>();
+                var bookmarks = GetAllInstances<Bookmarks>();
                 if (bookmarks.Length == 0)
                 {
                     var newBookmarks = ScriptableObject.CreateInstance(typeof(Bookmarks)) as Bookmarks;
@@ -27,6 +27,56 @@ namespace UnityBookmarks
 
                 return bookmarks[0];
             }
+        }
+
+        public static void DrawLabelCenteredBold(string s)
+        {
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.LabelField(s);
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.EndHorizontal();
+        }
+
+        public static string AddSpacesToSentence(string text, bool preserveAcronyms)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return string.Empty;
+            }
+
+            var newText = new StringBuilder(text.Length * 2);
+            newText.Append(text[0]);
+            for (var i = 1; i < text.Length; i++)
+            {
+                if (char.IsUpper(text[i]))
+                {
+                    if ((text[i - 1] != ' ' && !char.IsUpper(text[i - 1])) ||
+                        (preserveAcronyms && char.IsUpper(text[i - 1]) &&
+                         i < text.Length - 1 && !char.IsUpper(text[i + 1])))
+                    {
+                        newText.Append(' ');
+                    }
+                }
+
+                newText.Append(text[i]);
+            }
+
+            return newText.ToString();
+        }
+
+        private static T[] GetAllInstances<T>() where T : ScriptableObject
+        {
+            var guids = AssetDatabase.FindAssets(string.Format("t:{0}", typeof(T).Name));  //FindAssets uses tags check documentation for more info
+            var a = new T[guids.Length];
+
+            for (var i = 0; i < guids.Length; i++)
+            {
+                var path = AssetDatabase.GUIDToAssetPath(guids[i]);
+                a[i] = AssetDatabase.LoadAssetAtPath<T>(path);
+            }
+
+            return a;
         }
     }
 }

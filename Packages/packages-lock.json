@@ -13,13 +13,6 @@
       "dependencies": {},
       "hash": "f857f5782ff99f4ecad0375e1efbf234ce058831"
     },
-    "com.quantumcalzone.unityutilitiesandextensions": {
-      "version": "https://github.com/QuantumCalzone/UnityUtilitiesAndExtensions.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "b56180571ed6554c409e60948224b603214000aa"
-    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 2,

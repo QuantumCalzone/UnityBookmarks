@@ -2,7 +2,6 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-using UnityUtilitiesAndExtensions;
 
 namespace UnityBookmarks
 {
@@ -41,7 +40,7 @@ namespace UnityBookmarks
 
                 if(bookmarks.AssetPaths.Length == 0)
                 {
-                    EditorUtilities.DrawLabelCenteredBold("None");
+                    Utilities.DrawLabelCenteredBold("None");
                 }
                 else
                 {
@@ -52,7 +51,7 @@ namespace UnityBookmarks
                         if(!string.IsNullOrEmpty(assetPath.Replace(" ", string.Empty)))
                         {
                             var selectAssetLabel = Path.GetFileNameWithoutExtension(assetPath);
-                            selectAssetLabel = StringUtilities.AddSpacesToSentence(selectAssetLabel, false);
+                            selectAssetLabel = Utilities.AddSpacesToSentence(selectAssetLabel, false);
 
                             if(GUILayout.Button(selectAssetLabel))
                             {
@@ -84,7 +83,7 @@ namespace UnityBookmarks
                 GUILayout.Label("Scenes");
                 if(bookmarks.Scenes.Length == 0)
                 {
-                    EditorUtilities.DrawLabelCenteredBold("None");
+                    Utilities.DrawLabelCenteredBold("None");
                 }
                 else
                 {
@@ -95,7 +94,7 @@ namespace UnityBookmarks
 
                         if (!string.IsNullOrEmpty(sceneName.Replace(" ", string.Empty)))
                         {
-                            var openSceneLabel = StringUtilities.AddSpacesToSentence(sceneName, false);
+                            var openSceneLabel = Utilities.AddSpacesToSentence(sceneName, false);
                             openSceneLabel = openSceneLabel.Replace(".unity", string.Empty);
 
                             if (GUILayout.Button(openSceneLabel))
