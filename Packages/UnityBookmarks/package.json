@@ -2,7 +2,7 @@
     "name": "com.quantumcalzone.unitybookmarks",
     "displayName": "UnityBookmarks",
     "description": "A handy bookmark system for Unity.",
-    "version": "1.0.8",
+    "version": "0.1.8",
     "unity": "2018.1",
     "license": "MIT",
     "repository": {
