@@ -29,6 +29,15 @@ namespace UnityBookmarks
             }
         }
 
+        public static bool BookmarksExists
+        {
+            get
+            {
+                var bookmarks = GetAllInstances<Bookmarks>();
+                return bookmarks.Length > 0;
+            }
+        }
+
         public static void DrawLabelCenteredBold(string s)
         {
             EditorGUILayout.BeginHorizontal();

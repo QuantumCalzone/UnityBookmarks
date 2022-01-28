@@ -37,9 +37,15 @@ namespace UnityBookmarks
         [MenuItem(itemName: bookmarkMenuItemName, priority = bookmarkMenuItemPriority, validate = true)]
         private static bool CanBookmark()
         {
+            var doesNotContains = true;
+            if (Utilities.BookmarksExists)
+            {
+                doesNotContains = !Utilities.Bookmarks.Contains(SelectionID, IsScene(Selection.activeObject));
+            }
+
             return Selection.activeObject &&
                 AssetDatabase.IsMainAsset(Selection.activeObject) &&
-                !Utilities.Bookmarks.Contains(SelectionID, IsScene(Selection.activeObject));
+                doesNotContains;
         }
 
         [MenuItem(itemName: unbookmarkMenuItemName, priority = unbookmarkMenuItemPriority)]
@@ -51,9 +57,15 @@ namespace UnityBookmarks
         [MenuItem(itemName: unbookmarkMenuItemName, priority = unbookmarkMenuItemPriority, validate = true)]
         private static bool CanUnbookmark()
         {
+            var contains = false;
+            if (Utilities.BookmarksExists)
+            {
+                contains = Utilities.Bookmarks.Contains(SelectionID, IsScene(Selection.activeObject));
+            }
+
             return Selection.activeObject &&
                 AssetDatabase.IsMainAsset(Selection.activeObject) &&
-                Utilities.Bookmarks.Contains(SelectionID, IsScene(Selection.activeObject));
+                contains;
         }
 
         private static bool IsScene(UnityEngine.Object target)
