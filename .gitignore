@@ -61,3 +61,4 @@ crashlytics-build.properties
 Assets/Bookmarks.asset
 Assets/Bookmarks.asset.meta
 *.dwlt
+UserSettings/
